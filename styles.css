@@ -1,9 +1,17 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -30,14 +38,19 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    margin-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 260px;
+    width: 100%;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin left: 20px;
 }
 
 nav ul li a {
+
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -49,6 +62,13 @@ nav ul li a {
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
+}
+
+/* Hide the menu button on desktop */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 main {
@@ -128,24 +148,7 @@ footer {
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .content {
-        width: 90%; /* Full width on smaller screens */
-    }
-
-    .certificates-gallery {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
-}
 
 /* Lightbox container */
 .lightbox {
@@ -195,4 +198,34 @@ footer {
 .close-lightbox:hover,
 .close-lightbox:focus {
     color: #cc0000; /* Darker red on hover/focus */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        display: none; /* Initially hidden */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    .certificates-gallery {
+        grid-template-columns: 1fr;
+    }
 }
