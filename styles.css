@@ -202,6 +202,10 @@ footer {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+
+    .menu.active {
+        display: block; /* Show menu items when active */
+    }
     
     nav ul {
         flex-direction: column;
@@ -223,12 +227,22 @@ footer {
         display: block;
     }
 
+    .menu.active {
+        display: flex; /* Show menu items when active */
+    }
+
     .content {
-        width: 90%;
-        margin: 80px 20px;
-        padding: 80px 20px;
+        width: 90%; /* Adjust the width to control how wide the text block is */
+        margin: 50px auto; /* Centers the text block on the page */
+        padding: 20px;
+        background-color: white; /* Background color */
         
-       
+        font-family: Arial, sans-serif; /* Font similar to the one in the image */
+        font-size: 16px; /* Adjust font size */
+        line-height: 1.6; /* Line spacing */
+        color: black; /* Text color */
+        text-align: justify; /* Justifies the text */
+        
     }
 
     .certificates-gallery {
