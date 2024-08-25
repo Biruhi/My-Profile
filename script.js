@@ -111,18 +111,19 @@ lightboxImg.addEventListener('wheel', function(event) {
 });
 
 
+
+
+
 function toggleMenu() {
-    const navMenu = document.querySelector('.menu');
-    navMenu.classList.toggle('show');
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
 }
 
-// Hide the menu after a menu item is clicked
 function hideMenu() {
     const menu = document.querySelector('.menu');
-    if (menu.classList.contains('active')) {
-        menu.classList.remove('active');
-    }
+    menu.classList.remove('active');
 }
+
 
 
 
