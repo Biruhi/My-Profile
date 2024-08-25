@@ -112,11 +112,17 @@ lightboxImg.addEventListener('wheel', function(event) {
 
 
 function toggleMenu() {
-    const navMenu = document.getElementById('nav-links');
+    const navMenu = document.querySelector('.menu');
     navMenu.classList.toggle('show');
 }
 
-
+// Hide the menu after a menu item is clicked
+function hideMenu() {
+    const menu = document.querySelector('.menu');
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+    }
+}
 
 
 
