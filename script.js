@@ -19,23 +19,3 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 window.onload = function() {
     document.getElementById('home').style.display = 'block';
 };
-
-// Mobile Menu Toggle
-const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-const navMenu = document.querySelector('nav ul');
-
-mobileMenuIcon.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-});
-
-// Hide Menu on Scroll Down
-let lastScrollTop = 0;
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        document.querySelector('header').style.top = "-100px"; // Hide menu
-    } else {
-        document.querySelector('header').style.top = "0"; // Show menu
-    }
-    lastScrollTop = scrollTop;
-});
