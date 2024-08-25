@@ -2,13 +2,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
 }
 
 header {
-    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient for the menu bar */
     color: white;
-    padding: 1em 0;
+    padding: 1em 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,11 +17,11 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo img {
     max-width: 100px;
-    margin-left: 20px;
 }
 
 nav ul {
@@ -37,25 +38,31 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
 }
 
 main {
-    margin-top: 100px;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .content {
     padding: 2em;
     margin: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    width: 50%; /* Adjust width for a more compact layout */
+    max-width: 800px;
     display: none; /* Initially hide all sections */
 }
 
@@ -64,7 +71,26 @@ main {
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: #444;
+    text-align: center;
+}
+
+.certificates-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 15px;
+}
+
+.certificates-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.certificates-gallery img:hover {
+    transform: scale(1.05);
 }
 
 footer {
@@ -72,8 +98,26 @@ footer {
     padding: 1em;
     background-color: #333;
     color: white;
-    position: fixed;
-    bottom: 0;
+    margin-top: 50px;
     width: 100%;
-    margin-top: 100px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .content {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .certificates-gallery {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
 }
