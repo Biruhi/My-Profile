@@ -28,7 +28,7 @@ window.addEventListener('scroll', function() {
 
     if (scrollTop > lastScrollTop) {
         // Scrolling down
-        document.querySelector('header').style.top = "-1000px"; // Hide menu
+        document.querySelector('header').style.top = "-10px"; // Hide menu
     } else {
         // Scrolling up
         document.querySelector('header').style.top = "0"; // Show menu
