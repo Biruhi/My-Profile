@@ -1,231 +1,148 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="My Logo"> <!-- Replace 'logo.png' with your logo file -->
+        </div>
+        <nav>
+            <ul id = nav-links class="menu">
+                <!--<li><a href="#home">Home</a></li>-->
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#work">My Work</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- Hamburger menu icon -->
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #333;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
+        
 
-header {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient for the menu bar */
-    color: white;
-    padding: 1em 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: top 0.1s ease-in-out; /* Smooth transition */
-}
+    </header>
 
-.logo img {
-    max-width: 100px;
-    border-radius: 50%; /* Remove background by cropping to a circle */
-    background: none;
-}
+    <main>
+        <!--<section id="home" class="content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is a brief introduction to who I am.</p>
+        </section>-->
 
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0 260px;
-    width: 100%;
-}
+        <section id="about" class="content">
 
-nav ul li {
-    margin left: 20px;
-}
+            <h2>Background</h2>
 
-nav ul li a {
+            <p>I graduated from Debre Tabor University with a degree in Civil Engineering, where I studied structural analysis, foundation engineering, structural design, soil mechanics, highway engineering, mathematics, statistics, and related essential courses. I furthered my education with an MSc degree from Addis Ababa Science and Technology University in Civil Engineering, majoring in Road and Transportation Engineering. My studies focused on transportation planning, transportation engineering, pavement engineering, and traffic safety. With over five years of teaching experience at Debre Tabor University, I have a strong academic foundation and practical knowledge in these areas.</p>
 
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: background 0.3s, transform 0.3s;
-}
+            <h2>Skills</h2>
 
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
-}
+            <p>I possess a diverse skill set, including programming, data analytics, machine learning, and web development. My programming skills enable me to write efficient code for various applications. I am proficient in data analytics, which allows me to interpret and derive meaningful insights from complex datasets. My machine learning expertise includes the development and application of algorithms to solve real-world problems. In web development, I am skilled in creating and optimizing websites using HTML, CSS, JavaScript, and PHP.</p>
 
-/* Hide the menu button on desktop */
-.menu-btn {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-}
+            <h2>Research Work</h2>
 
-main {
-    margin-top: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
+            <p>My research work encompasses several notable projects. I have applied artificial neural networks (ANN) to predict the California Bearing Ratio (CBR) value of waste glass and eggshell-stabilized black cotton soil, and utilized coffee husk for the stabilization of expansive soil—both of which have been published. Additionally, I am working on predicting soil cohesion using ANN and Random Forest techniques.</p>
 
-.content {
-    padding: 2em;
-    margin: 20px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    width: 70%; /* Adjust width for a more compact layout */
-    max-width: 1000px;
-    display: none; /* Initially hide all sections */
-}
+            <h2>Community Service</h2>
 
-.content:target {
-    display: block; /* Show only the section that is clicked */
-}
+            <p>I have actively contributed to community service through various organizations. My efforts include mentoring Bahidra City civil servants on waste management and its industrial applications, assessing the impact of waste on ditches and its flood effects in Debre Tabor City, and conserving landscapes through tree planting and protection against hazards. I have motivated individuals with disabilities regarding infrastructure usage, mentored Debre Tabor University academic staff on the impact of AI in the construction industry, and inspired youth about the importance of education for civilization. I am also involved in additional relevant mentoring programs, focusing on leveraging my skills to positively impact communities.</p>
 
-h1, h2, h3 {
-    color: #444;
-    text-align: center;
-}
+            <h2>Interests</h2>
 
-.certificates-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 15px;
-}
+            <p>My interests lie in leveraging my background in civil engineering and my skills in programming, data analytics, machine learning, and web development to drive impactful solutions. I am passionate about integrating technology with civil engineering to enhance infrastructure design and management, and I am committed to using my expertise to contribute to sustainable development and community improvement.</p>
+        </section>
 
-.certificate-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+        <section id="education" class="content">
+            <h2>Education</h2>
+            <p>I graduated from Debre Tabor University with a degree in Civil Engineering, where I studied various essential courses including structural analysis, foundation engineering, structural design, soil mechanics, highway engineering, mathematics, and statistics. I furthered my education by obtaining an MSc degree in Civil Engineering from Addis Ababa Science and Technology University, with a focus on Road and Transportation Engineering. This advanced degree covered transportation planning, transportation engineering, pavement engineering, and traffic safety.</p>
 
-.certificates-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    cursor: pointer; /* Indicate the image is clickable */
-}
+            <h2>Work Experience</h2>
 
-.certificates-gallery img:hover {
-    transform: scale(1.05);
-}
+            <p>I have also been an educator for over 5 years at Debre Tabor University. </p>
 
-.description {
-    margin-top: 10px;
-}
+            <h2>Research Experience</h2>
 
-.title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
+            <p>My research work includes several significant projects: I conducted studies on the prediction of the California Bearing Ratio (CBR) value of waste glass and eggshell-stabilized black cotton soil using artificial neural networks, and the utilization of coffee husk for the stabilization of expansive soil, both of which have been published. Additionally, I am working on a research project that involves predicting soil cohesion using artificial neural networks and random forests.</p>
+        </section>
 
-.description-text {
-    font-size: 14px;
-    color: #555;
-}
+        <section id="work" class="content">
+            <h2>My Work</h2>
+            <ul>
+                <li><a href="https://github.com/yourprofile/project1">Project 1</a></li>
+                <li><a href="https://github.com/yourprofile/project2">Project 2</a></li>
+            </ul>
+        </section>
 
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #333;
-    color: white;
-    margin-top: 50px;
-    width: 100%;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
-}
+        <section id="certificates" class="content">
+            <h2>Certificates</h2>
+            <div class="certificates-gallery">
+                <!-- Certificate Image and Description -->
+                <div class="certificate-item">
+                    <img src="dtu.jpg" alt="Certificate 1">
+                    <div class="description">
+                        <p class="title">Certificate Title 1</p>
+                        <p class="description-text">Description of the certificate, highlighting its significance and details.</p>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <img src="moe.jpg" alt="Certificate 2">
+                    <div class="description">
+                        <p class="title">Certificate Title 2</p>
+                        <p class="description-text">Short description of the certificate and what it represents.</p>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <img src="d1.jpg" alt="Certificate 3">
+                    <div class="description">
+                        <p class="title">Certificate Title 3</p>
+                        <p class="description-text">Brief overview of the certificate and its relevance.</p>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <img src="po.jpg" alt="Certificate 4">
+                    <div class="description">
+                        <p class="title">Certificate Title 4</p>
+                        <p class="description-text">Description detailing the achievements or qualifications recognized by the certificate.</p>
+                    </div>
+                </div>
+                <!-- Add more certificate items as needed -->
+            </div>
+        </section>
 
+        <section id="blog" class="content">
+            <h2>Blog</h2>
+            <article>
+                <h3>Civil Engineering and AI: A Modern Intersection</h3>
+                <p>The integration of Artificial Intelligence in Civil Engineering is transforming the way infrastructure is designed, built, and maintained. AI-powered tools are enabling engineers to predict structural behaviors, optimize material usage, and even automate construction processes. This convergence not only improves efficiency but also enhances the safety and sustainability of civil projects.</p>
+            </article>
+        </section>
 
+        <section id="contact" class="content">
+            <h2>Contact Me</h2>
+            <p>You can reach me through the following:</p>
+            <p>Email: biruhitesfaye@gmail.com</p>
+            <p>Phone Number: +251926840547</p>
+            <p>linkedin: </p>
 
-/* Lightbox container */
-.lightbox {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    overflow: auto;
-}
+        </section>
+    </main>
 
-/* Lightbox image */
-.lightbox-image {
-    max-width: 80vw; /* Adjust width to fit 80% of the viewport width */
-    max-height: 80vh; /* Adjust height to fit 80% of the viewport height */
-    width: auto;
-    height: auto;
-    display: block;
-    margin: auto; /* Center the image horizontally */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-    transition: transform 0.3s ease; /* Smooth zoom transition */
-}
+    <footer>
+        <p>&copy; 2024 Biruhi Tesfaye Abeje, Debre Tabor University, Ethiopia</p>
+    </footer>
 
-/* Portrait mode adjustment */
-.lightbox-image.portrait {
-    max-width: 80vw; /* Adjust width for portrait mode */
-    max-height: 80vh; /* Adjust height to fit portrait images */
-}
+    <!-- Lightbox HTML Structure -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-image" id="lightbox-img" src="" alt="Full Screen Image">
+    </div>
 
-/* Close button */
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #ff0000; /* Red color for the close button */
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-lightbox:hover,
-.close-lightbox:focus {
-    color: #cc0000; /* Darker red on hover/focus */
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-    
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-        display: none; /* Initially hidden */
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul.show {
-        display: block;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .content {
-        width: 90%;
-    }
-
-    .certificates-gallery {
-        grid-template-columns: 1fr;
-    }
-}
+    <script src="script.js"></script>
+</body>
+</html>
