@@ -18,10 +18,13 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s;
 }
 
 .logo img {
     max-width: 100px;
+    border-radius: 50%; /* Remove background by cropping to a circle */
+    background: none;
 }
 
 nav ul {
@@ -48,76 +51,67 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-main {
-    margin-top: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.content {
-    padding: 2em;
-    margin: 20px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    width: 50%; /* Adjust width for a more compact layout */
-    max-width: 800px;
-    display: none; /* Initially hide all sections */
-}
-
-.content:target {
-    display: block; /* Show only the section that is clicked */
-}
-
-h1, h2, h3 {
-    color: #444;
-    text-align: center;
-}
-
-.certificates-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 15px;
-}
-
-.certificates-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.certificates-gallery img:hover {
-    transform: scale(1.05);
-}
-
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #333;
-    color: white;
-    margin-top: 50px;
-    width: 100%;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+.mobile-menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
     nav ul {
+        display: none;
         flex-direction: column;
         text-align: center;
+        width: 100%;
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        position: absolute;
+        top: 70px;
+        left: 0;
     }
 
     nav ul li {
         margin: 10px 0;
     }
 
-    .content {
-        width: 90%; /* Full width on smaller screens */
+    nav ul.show {
+        display: flex;
     }
 
-    .certificates-gallery {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+    .mobile-menu-icon {
+        display: block;
     }
 }
+
+main {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+section {
+    width: 100%;
+    padding: 20px;
+}
+
+.certificates-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certificates-gallery img {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.certificates-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Additional Content and Footer Styles */
