@@ -28,7 +28,7 @@ window.addEventListener('scroll', function() {
 
     if (scrollTop > lastScrollTop) {
         // Scrolling down
-        document.querySelector('header').style.top = "-1000px"; // Hide menu
+        document.querySelector('header').style.top = "-140px"; // Hide menu
     } else {
         // Scrolling up
         document.querySelector('header').style.top = "0"; // Show menu
@@ -109,6 +109,12 @@ lightboxImg.addEventListener('wheel', function(event) {
     }
     lightboxImg.style.transform = `scale(${scale})`;
 });
+
+
+function toggleMenu() {
+    const navMenu = document.getElementById('nav-links');
+    navMenu.classList.toggle('show');
+}
 
 
 
