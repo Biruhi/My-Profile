@@ -18,10 +18,13 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.1s ease-in-out; /* Smooth transition */
 }
 
 .logo img {
     max-width: 100px;
+    border-radius: 50%; /* Remove background by cropping to a circle */
+    background: none;
 }
 
 nav ul {
@@ -61,8 +64,8 @@ main {
     background: rgba(255, 255, 255, 0.85);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    width: 50%; /* Adjust width for a more compact layout */
-    max-width: 800px;
+    width: 70%; /* Adjust width for a more compact layout */
+    max-width: 1000px;
     display: none; /* Initially hide all sections */
 }
 
@@ -81,16 +84,38 @@ h1, h2, h3 {
     gap: 15px;
 }
 
+.certificate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .certificates-gallery img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    cursor: pointer; /* Indicate the image is clickable */
 }
 
 .certificates-gallery img:hover {
     transform: scale(1.05);
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.description-text {
+    font-size: 14px;
+    color: #555;
 }
 
 footer {
@@ -120,4 +145,54 @@ footer {
     .certificates-gallery {
         grid-template-columns: 1fr; /* Single column on smaller screens */
     }
+}
+
+/* Lightbox container */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* Lightbox image */
+.lightbox-image {
+    max-width: 80vw; /* Adjust width to fit 80% of the viewport width */
+    max-height: 80vh; /* Adjust height to fit 80% of the viewport height */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto; /* Center the image horizontally */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+/* Portrait mode adjustment */
+.lightbox-image.portrait {
+    max-width: 80vw; /* Adjust width for portrait mode */
+    max-height: 80vh; /* Adjust height to fit portrait images */
+}
+
+/* Close button */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ff0000; /* Red color for the close button */
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: #cc0000; /* Darker red on hover/focus */
 }
