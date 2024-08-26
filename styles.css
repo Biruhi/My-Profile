@@ -47,6 +47,8 @@ nav ul {
 
 nav ul li {
     margin left: 20px;
+    padding-right: 50px; /* To move left*/
+    align-items: center;
 }
 
 nav ul li a {
